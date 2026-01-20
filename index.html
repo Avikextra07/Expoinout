@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workforce Tracker | Clock In-Out</title>
+    <link
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="loading-overlay" id="loader" style="display:none;">
+                <div class="spinner-border text-primary" role="status"></div>
+                <span class="ml-2 font-weight-bold">Processing...</span>
+            </div>
+
+            <div class="text-center mb-4">
+                <img src="rb-logo.png" alt="logo" width="180">
+                <div class="tracker-title mt-2">Workforce Tracker</div>
+            </div>
+            
+            <form id="submit-to-google-sheet">
+                <input type="hidden" name="action_type" id="action_type" value="">
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Full Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="official.email@company.com" required />
+                </div>
+                <div class="form-group">
+                    <label for="contact_number">Contact Number</label>
+                    <input class="form-control" type="text" name="contact_number" id="contact_number" placeholder="Contact Number" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message/Reason</label>
+                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Optional remarks"></textarea>
+                </div>
+
+                <div class="form-group form-check mt-3 mb-4">
+                    <input class="form-check-input" type="checkbox" id="ex" required />
+                    <label class="form-check-label" for="ex">
+                        I confirm the data accuracy.
+                    </label>
+                </div>
+
+                <div class="form-row mb-3">
+                    <div class="col">
+                        <button type="submit" onclick="setAction('arrival')" class="btn btn-arrival btn-block">
+                            Arrival
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="submit" onclick="setAction('departure')" class="btn btn-departure btn-block">
+                            Departure
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-row mt-2">
+                    <div class="col">
+                        <button type="button" id="save-details-btn" class="btn btn-outline-secondary btn-block btn-sm">Save Details</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" id="autofill-btn" class="btn btn-secondary btn-block btn-sm">Autofill</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="access-denied-container" style="display:none; text-align: center; margin-top: 20vh;">
+        <h2 class="text-danger font-weight-bold">Access Denied</h2>
+        <p class="text-secondary">Please connect to the authorized network to proceed.</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

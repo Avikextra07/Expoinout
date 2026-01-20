@@ -1,0 +1,165 @@
+/* Import Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --primary-purple: #6366f1;
+    --dark-purple: #4f46e5;
+    --soft-white: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #f5f7ff 0%, #ecefff 100%);
+    /* Enhanced Purple Mix for the Form Box */
+    --form-gradient: linear-gradient(145deg, #ffffff 30%, #f3f0ff 100%);
+}
+
+body {
+    background: var(--bg-gradient) !important;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1e293b;
+    
+    /* Perfect Centering Logic */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center;     /* Vertical center */
+    min-height: 100vh;       /* Takes full height of the viewport */
+    width: 100vw;            /* Takes full width of the viewport */
+    overflow-x: hidden;      /* Prevents side scrolling */
+}
+
+/* Ensure the Bootstrap container doesn't add unwanted margins */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-container {
+    width: 350px; 
+    /* Remove any top margins that might push it down */
+    margin: 0 auto; 
+    padding: 2rem;
+    border-radius: 24px;
+    background: var(--form-gradient);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.05),
+        0 10px 10px -5px rgba(0, 0, 0, 0.02),
+        inset 0 0 40px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.tracker-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-purple);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: #fff;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.08);
+    outline: none;
+}
+
+/* --- DUAL BUTTON STYLING --- */
+
+/* Arrival: Solid Purple */
+.btn-arrival {
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--dark-purple) 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+    transition: all 0.3s ease;
+}
+
+/* Departure: White/Purple Border Style */
+.btn-departure {
+    background: #ffffff !important;
+    color: var(--dark-purple) !important;
+    border: 2px solid #eef2ff !important;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.btn-arrival:hover, .btn-departure:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+.btn-arrival:active, .btn-departure:active {
+    transform: translateY(0);
+}
+
+/* Utility Buttons (Save/Autofill) */
+.btn-outline-secondary {
+    border: 1.5px solid #e2e8f0;
+    color: #64748b;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.btn-secondary {
+    background: #f1f5f9 !important;
+    color: #475569 !important;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Checkbox Style */
+.form-check-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    cursor: pointer;
+}
+
+/* Loading Overlay Styles */
+.loading-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.spinner-border {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--primary-purple) !important;
+}
