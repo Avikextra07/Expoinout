@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const isArrival = data.type === 'arrival';
                     
                     Swal.fire({
-                        title: isArrival ? "Welcome!" : "Goodbye!",
+                        title: isArrival ? "Welcome!" : "See you soon!",
                         html: `
                             <div style="padding: 10px;">
                                 <p style="font-weight: 600;">${isArrival ? 'Arrival' : 'Departure'} Recorded Successfully.</p>
