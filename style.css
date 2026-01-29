@@ -163,3 +163,31 @@ body {
     height: 2.5rem;
     color: var(--primary-purple) !important;
 }
+
+/* Access Denied Styling */
+#access-denied-container {
+    width: 350px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 24px;
+    background: var(--form-gradient);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.05),
+        0 10px 10px -5px rgba(0, 0, 0, 0.02),
+        inset 0 0 40px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+#access-denied-container h2 {
+    color: #ef4444; /* Red color for denied */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#access-denied-container p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
