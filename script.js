@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbw5tLBbMlhooXD1q5wzYipKl1rEYkMRI3lEXpnKzZEWlGGGalUGiQTGg_zRSyiLQ_A/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwhTZVOVKQVbzqBjoJTmH1Pl0KRoeNCx65VqWPBK1mQYV8Dp7O3W-GjDQyPEu5lzj8/exec";
 const form = document.forms["submit-to-google-sheet"];
 const formContainer = document.querySelector(".form-container");
 const accessDeniedContainer = document.getElementById("access-denied-container");
@@ -141,3 +141,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Prefill data immediately on page load
     loadSavedData();
 });
+
